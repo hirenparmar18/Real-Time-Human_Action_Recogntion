@@ -1,0 +1,54 @@
+[System]
+Name='fuzzy_fis'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='dxR'
+Range=[0 0.7]
+NumMFs=3
+MF1='Low':'trapmf',[-0.165 -0.0657 0.208333333333333 0.288]
+MF2='Med':'trimf',[0.197 0.36 0.515740740740741]
+MF3='High':'trapmf',[0.4 0.471 0.71 0.904]
+
+[Input2]
+Name='dyR'
+Range=[-0.7 0.7]
+NumMFs=3
+MF1='Low':'trapmf',[-1.2 -0.756 -0.387 -0.0944444444444444]
+MF2='Med':'trapmf',[-0.372 -0.216666666666667 0.143 0.313]
+MF3='High':'trapmf',[0.124074074074074 0.261074074074074 0.730074074074074 1.17407407407407]
+
+[Input3]
+Name='dzR'
+Range=[0 0.7]
+NumMFs=2
+MF1='Low':'trapmf',[-0.102 -0.0991 0.232407407407407 0.402]
+MF2='High':'trapmf',[0.276407407407407 0.423407407407407 0.743407407407407 0.905407407407407]
+
+[Input4]
+Name='dyL'
+Range=[-0.6 0.6]
+NumMFs=2
+MF1='Low':'trapmf',[-0.854 -0.687 -0.135 0.0746031746031748]
+MF2='High':'trapmf',[-0.0904761904761904 0.187 0.796 0.869]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=5
+MF1='mf1':'trapmf',[-0.225 -0.025 0.025 0.225]
+MF2='mf2':'trimf',[0.00264550264550267 0.252645502645503 0.502645502645503]
+MF3='mf3':'trimf',[0.25 0.5 0.75]
+MF4='mf4':'trimf',[0.5 0.75 1]
+MF5='mf5':'trapmf',[0.775 0.975 1.025 1.225]
+
+[Rules]
